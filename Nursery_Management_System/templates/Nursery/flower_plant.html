@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {%block title %} Flowering Plant {% endblock %}
+
+</head>
+<body>
+{% block content_block %}
+ <div class="container">
+   <div class="row">
+
+              {% for i in  flower %}
+                  <div class="col-md-4">
+              <div class="card" style="width:18rem; float:left">
+               <img src="{{i.imagefile.url}}" width="70" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">{{i.plant_name|upper }} &nbsp;&nbsp;&nbsp;<span style="color:green">PRICE :{{i.price}}</span></h5>
+                  </div>
+              </div>
+                  </div>
+               {% endfor %}
+
+
+    </div>
+ </div>
+{% endblock %}
+
+
+</body>
+</html>

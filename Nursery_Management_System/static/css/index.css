@@ -1,0 +1,56 @@
+* {
+     margin: 0px;
+    padding: 0px;
+}
+h3  {
+    font-family:'Akronim', cursive;
+    color:crimson;
+    position:center;
+    margin-left:500px;
+}
+
+.rounded {
+    border-radius:50%;
+    width:200px;
+    text-align: center;
+}
+
+#head {
+    background-color: black;
+    margin:10px 10px;
+}
+nav {
+     margin: 10px 10px;
+}
+
+ul li a
+{
+    color :darkorange;
+
+}
+li a{
+    margin-left :20px;
+    color :green;
+    text-align: center;
+}
+ .active {
+     margin-left :30px;
+     background-color:blueviolet;
+     padding: 2px;
+  }
+a:hover {
+     background-color: #f78025;
+     color :black;
+}
+
+p {
+            color: deepskyblue;
+           font-family: Algerian;
+            background-color:transparent;
+            text-transform: uppercase;
+            margin-left :250px;
+         }
+
+.jumbotron {
+    background-color: darkolivegreen;
+}

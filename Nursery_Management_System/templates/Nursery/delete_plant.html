@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block title %} Delete Plant{% endblock %}
+    <style>
+        #btn_design {
+            margin-left:350px;
+        }
+
+
+    </style>
+</head>
+<body>
+{% block content_block %}
+<form class="form-group"  method="post">
+  <div class="jumbotron">
+    <h3> DELETE PLANT</h3>
+    {%csrf_token%}
+    {{form.as_p}}
+        <div style="margin-left: 350px">
+                <form method="post">
+                    {% csrf_token%}
+                    Are you want to delete the record?<input type="submit" name="submit" value="yes" class="btn btn-danger btn-md">
+                    <button class="btn btn-md btn-primary"> <a href="/show_plant" style="color:#000;">Cancel</a> </button>
+                </form>
+        </div>
+  </div>
+</form>
+{% endblock %}
+</body>
+</html>

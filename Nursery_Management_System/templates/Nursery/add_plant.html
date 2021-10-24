@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block title %} Add Plant{% endblock %}
+    <style>
+        #btn_design {
+            margin-left:350px;
+        }
+
+
+    </style>
+</head>
+<body>
+{% block content_block %}
+<form class="form-group"  method="post" enctype="multipart/form-data">
+  <div class="jumbotron">
+    <h3> ADD PLANT</h3>
+    {%csrf_token%}
+    {{form.as_p}}
+    <div style="margin-left: 350px"><input type="submit" class="btn btn-md btn-primary" id="btn_design" name="upload" value="ADD PLANT">
+    <a  href=""  class="btn btn-md btn-success">CANCEL</a>
+    </div>
+  </div>
+</form>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     {%block title %} Show Plant{% endblock %}
+<style>
+    .c {
+        color :cornflowerblue;
+    }
+</style>
+</head>
+<body>
+{%block content_block%}
+<div class="container text-light">
+<table class="table table-striped bg-dark">
+    <thead class="bg-primary">
+      <tr>
+         <th>Plant ID</th>
+		<th>Plant Name</th>
+		<th>Price</th>
+          <th> Plant Type</th>
+          <th>Image</th>
+          <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for img in images %}
+      <tr>
+      <td>{{ img.id }}</td>
+        <td>{{img.plant_name|upper}}</td>
+          <td>{{img.price}}</td>
+          <td> {{img.plant_type}}</td>
+		<td><img src="{{img.imagefile.url}}" width="90"/></td>
+      <td><a href="/update_plant/{{img.id}}">Update</a></td>
+      <td><a href="/delete_plant/{{ img.id }}">Delete</a></td>
+      </tr>
+	  {% endfor %}
+	</tbody>
+</table>
+</div>
+{%endblock%}
+</body>
+</html>

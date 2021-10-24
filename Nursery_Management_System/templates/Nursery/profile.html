@@ -1,0 +1,35 @@
+<!doctype html>
+{% extends 'Nursery/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     {%block title %} Profile {% endblock %}
+<style>
+    h2 { font-weight: bold;
+        color :#f78025;
+         font-family :Algerian
+    }
+</style>
+</head>
+<body>
+{%block content_block%}
+    <div class="container">
+    <div class="jumbotron">
+          <h3>Current Login User Details</h3><hr>
+        <h2 class="text-info">UserName :{{user.username|title}}</h2>
+        <h2 class="text-info">First Name:{{ user.first_name |title }}</h2>
+        <h2 class="text-info">Last Name:{{ user.last_name|title}}</h2>
+        <h2 class="text-info">Email Id:{{ user.email }}</h2>
+
+    </div>
+
+    </div>
+
+
+{% endblock %}
+</body>
+</html>

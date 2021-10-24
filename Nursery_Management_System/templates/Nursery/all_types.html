@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {%block title %} All Plant {% endblock %}
+
+<style>
+
+    #jumbo {
+        width :40%;
+        margin-left: 300px;
+    }
+    #left
+    {
+        margin-left: 100px;
+    }
+
+</style>
+</head>
+<body>
+{% block content_block %}
+
+    <div class="jumbotron" style="width:60% ;margin-left: 300px;">
+      <div class="row">
+           <div>
+               &nbsp;&nbsp;<button class="btn btn-success btn-lg" style="font-weight: bold"><a href="/vegetable_plants" class="text-dark">Vegetable Plants</a></button>
+                <button class="btn btn-info btn-lg" style="font-weight: bold"><a href="/flowering_plants" class="text-dark">Flowering Plants</a></button>
+           </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+</body>
+</html>

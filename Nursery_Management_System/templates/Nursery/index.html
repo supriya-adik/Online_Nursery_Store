@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title %} Home{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+<style>
+           body
+           {
+               background-image:url('{% static 'images/home.jpg' %}');
+               background-repeat:no-repeat;
+               background-size:100%;
+               background-attachment: fixed;
+           }
+       </style>
+  {% block css_block %}
+
+    {% endblock %}
+
+
+</head>
+<body>
+<header>
+
+<div id="head">
+    <div class="container-fluid">
+         <h3> ONLINE NURSERY STORE </h3>
+    </div>
+</div>
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-info rounded bg-danger" href="/">Nursery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-light" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link text-light" href="/show_plant">Available Plants</a>
+      </li>
+
+        <li class="nav-item ">
+        <a class="nav-link text-light" href="/all_types">All Types</a>
+      </li>
+
+       <li class="nav-item ">
+        <a class="nav-link text-light" href="/add_plant">Add Plant</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/order_plant">Book Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/my_order">My Order</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/order_details">Order Details</a>
+      </li>
+
+     </ul>
+      <div class="navbar-nav ml-auto text-light">
+            {% if request.user.is_authenticated %}
+            <a class="nav-link text-light" href="/profile">My Account</a>
+            <a class="nav-link text-light" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-link text-light" href="/accounts/login">Login</a>
+            <a class="nav-link text-light" href="/register">Register</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+{% block content_block %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+{% endblock%}
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-muted teal pt-4" style="background-color:black">
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold" style="color:cornflowerblue">ADDRESS </h5>
+          <hr>
+        <address style="color:honeydew">Sk nursery<br>
+No reviews · Wholesale plant nursery<br>
+Sangamner, Maharashtra<br>
+Open 24 hours</address>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase ml-8 font-weight-bold" style="color: cornflowerblue; margin-left:380px">Contact</h5>\
+          <hr>
+        <p style="color: honeydew">Contact Person. varsha, : +91 98198647521.<br> ,Rohan : +91 9899620845.</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Text -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="color: aliceblue">© 2021 Copyright:
+    <a href="https://mdbootstrap.com/"> Nurserystore.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer --></body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     {%block title %} Total Order Details{% endblock %}
+<style>
+    .c {
+        color :cornflowerblue;
+    }
+</style>
+</head>
+<body>
+{%block content_block%}
+    <h3>The Order Details of Customer :{{user}}</h3>
+<div class="container text-light">
+<table class="table table-striped bg-dark">
+    <thead class="bg-primary">
+      <tr>
+		  <th>Plant Name</th>
+          <th>Qty</th>
+          <th>Date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+     {% for f in  form %}
+      <tr>
+          <td>{{f.plant_name }}</td>
+          <td>{{f.qty}}</td>
+          <td>{{f.date }}</td>
+
+      </tr>
+      {% endfor %}
+	</tbody>
+</table>
+
+</div>
+    <div>  <button class="btn btn-md btn-default" onclick="window.print()">Print this page</button> &nbsp;<button class="btn btn-md btn-primary"><a href="/all_types" style="text-decoration: none;color: black">See Price Details</a></button> </div>
+{%endblock%}
+</body>
+</html>

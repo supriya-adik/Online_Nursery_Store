@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'Nursery/index.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     {%block title %} Order Plant Details{% endblock %}
+<style>
+    .c {
+        color :cornflowerblue;
+    }
+</style>
+</head>
+<body>
+{%block content_block%}
+<div class="container text-light">
+<table class="table table-striped bg-dark">
+    <thead class="bg-primary">
+      <tr>
+          <th>Customer Name</th>
+		  <th>Plant Name</th>
+		  <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+          <td>{{name|title }}</td>
+          <td>{{plant_name|upper}}</td>
+          <td>{{price}}</td>
+          <td> {{qty}}</td>
+		  <td> {{total }}</td>
+      </tr>
+
+	</tbody>
+</table>
+
+</div>
+    <div><button class="btn btn-md btn-default" onclick="window.print()">Print this page</button> </div>
+
+{%endblock%}
+</body>
+</html>
